@@ -32,9 +32,16 @@ app.post('/cliente', function (req, res) {
   cliente.push(newUsers)
 
 
-  res.status(201).json(newUsers)
+  res.status(201).send('Cadastro realizado com sucesso')
 });
 
+
+app.delete('/cliente/:id', function (req, res) {
+  const id = req.params.id
+
+  console.log(req.params.id)
+  res.send("Usuário deletado com  sucesso")
+});
 
 app.listen(porta, () => {
   console.log('servidor rodando')
